@@ -43,6 +43,18 @@ Make sure you have the following software installed on your machine:
 - Access the backend at http://localhost:3000.
 - Access the frontend at http://localhost:8080.
 
+## Key Features
+
+- User registration and secure login
+- Account creation using first name, last name and an optional profile picture
+- Confirmation notification after successful registration
+- Personalised main feed displaying posts created by other employees
+- Creation of text and image posts
+- Real-time likes and comments
+- Comments displaying the user's name and profile picture
+- Employee profile functionality
+- Responsive and user-friendly social media interface
+
 ### Database Configuration
 
 In the `backend/config/database.js` file, you can find the configuration for the MySQL connection. Make sure it matches your setup. If needed, update the file with your own database host, user, password, and name.
