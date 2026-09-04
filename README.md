@@ -70,3 +70,23 @@ module.exports = mysql2.createConnection({
   charset: 'utf8mb4',
 });
 ```
+## Technologies Used
+
+### Frontend
+- Vue.js
+- JavaScript
+- HTML5
+- CSS3
+
+### Backend
+- Node.js
+- Express.js
+- REST API
+
+### Database
+- MySQL
+
+### Development Tools
+- Git
+- GitHub
+- Visual Studio Code
