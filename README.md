@@ -90,3 +90,7 @@ module.exports = mysql2.createConnection({
 - Git
 - GitHub
 - Visual Studio Code
+
+## What I Learned
+
+Through this project, I developed practical experience in building a full-stack web application and connecting a Vue.js frontend to a Node.js and Express backend. I learned how to create and manage user accounts, store and retrieve data from a MySQL database, and implement interactive features such as posts, images, likes and comments. The project also strengthened my troubleshooting skills and my understanding of application structure, API communication and version control using Git and GitHub.
