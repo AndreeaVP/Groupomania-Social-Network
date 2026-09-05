@@ -1,96 +1,192 @@
 # Groupomania Social Network
-Groupomania is an internal social network for Groupomania's employees. The goal of this tool is to facilitate more interaction between colleagues. A file with the company's logos has been provided. As well as the user requirements specifications.
-The design was free of choice. 
-The backend has been developed using Express. The data is stored on a SQL Database. The frontend of the app was developed with Vue.js. 
+
+Groupomania is a full-stack internal social network designed to encourage communication and interaction between employees.
+
+Users can create an account, manage their profile, publish text or image posts, interact through likes and comments, and search for other employees. The application includes a responsive Vue.js frontend, a REST API built with Node.js and Express, and a MySQL database.
+
+## Application Preview
+
+### Authentication
+
+| Login | Sign Up |
+| --- | --- |
+| ![Login page](screenshots/01-login.png) | ![Sign-up page](screenshots/02-signup.png) |
+
+### Home Feed and Posts
+
+| Create a Post | Post Interactions |
+| --- | --- |
+| ![Home feed and post creation](screenshots/03-home-feed.png) | ![Likes and comments](screenshots/04-posts-interaction.png) |
+
+| Personalised Feed | Employee Search |
+| --- | --- |
+| ![Personalised home feed](screenshots/05-home-feed.png) | ![Employee search](screenshots/06-search-users.png) |
+
+### Profiles and Account Management
+
+| User Profile | Profile Settings |
+| --- | --- |
+| ![User profile](screenshots/07-user-profile.png) | ![Profile settings](screenshots/08-profile-settings.png) |
+
+| Change Password | Delete Account |
+| --- | --- |
+| ![Change password](screenshots/09-change-password.png) | ![Delete account](screenshots/10-delete-account.png) |
+
+| Account Deletion Confirmation | Searched User Profile |
+| --- | --- |
+| ![Account deletion confirmation](screenshots/11-deletion-confirmation.png) | ![Another employee's profile](screenshots/12-search-user-profile.png) |
+
+## Key Features
+
+- User registration and authentication
+- Optional profile image during account creation
+- Personalised employee feed
+- Text and image posts
+- Likes and comments
+- Employee search
+- Individual user profiles
+- Profile name and image updates
+- Password changes
+- Account deletion
+- Confirmation and error notifications
+- Responsive interface for desktop and smaller screens
+
+## Technologies Used
+
+### Frontend
+
+- Vue.js 3
+- Vue Router
+- Vuex
+- JavaScript
+- HTML5
+- SCSS
+- Axios
+- Font Awesome
+
+### Backend
+
+- Node.js
+- Express.js
+- REST API
+- JSON Web Tokens
+- bcrypt
+- Multer
+- Helmet
+- Morgan
+- Winston
+
+### Database
+
+- MySQL
+- mysql2
+
+### Development Tools
+
+- Git
+- GitHub
+- Visual Studio Code
+- npm
 
 ## Getting Started
 
 ### Prerequisites
-Make sure you have the following software installed on your machine:
-- [Node.js](https://nodejs.org/) (v18.16.0)
-- [MySQL](https://dev.mysql.com/downloads/) (v8.0.34)
-- [Vue.js](https://vuejs.org/) (@vue/cli v5.0.8)
+
+Install the following software:
+
+- [Node.js](https://nodejs.org/) — v18.16.0
+- [MySQL](https://dev.mysql.com/downloads/) — v8.0.34
+- [Vue CLI](https://cli.vuejs.org/) — v5.0.8
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/AndreeaVP/Groupomania-Social-Network.git
+cd Groupomania-Social-Network
+```
 
 ### Database Setup
 
 1. Create a MySQL database for the project.
-2. In the `backend` directory, create a `.env` file with the following content, replacing the values with your own:
-   ```env
-   DB_HOST=your_database_host
-   DB_USER=your_database_user
-   DB_PASSWORD=your_database_password
-   DB_NAME=your_database_name
-   ```
+2. Import the provided `backend/database_structure.sql` file.
+3. Inside the `backend` directory, create a `.env` file.
+4. Add your own database details:
 
-### Installation
-
-#### Backend
-
-1. Clone the repository.
-2. Navigate to the `backend` directory.
-3. Run `npm install` to install dependencies.
-4. Run `npm start` to start the backend server.
-
-#### Frontend
-
-1. Clone the repository.
-2. Navigate to the `frontend` directory.
-3. Run `npm install` to install dependencies.
-4. Run `npm run serve` to start the frontend app.
-
-## Usage
-
-- Access the backend at http://localhost:3000.
-- Access the frontend at http://localhost:8080.
-
-## Key Features
-
-- User registration and secure login
-- Account creation using first name, last name and an optional profile picture
-- Confirmation notification after successful registration
-- Personalised main feed displaying posts created by other employees
-- Creation of text and image posts
-- Real-time likes and comments
-- Comments displaying the user's name and profile picture
-- Employee profile functionality
-- Responsive and user-friendly social media interface
-
-### Database Configuration
-
-In the `backend/config/database.js` file, you can find the configuration for the MySQL connection. Make sure it matches your setup. If needed, update the file with your own database host, user, password, and name.
-
-```javascript
-const mysql2 = require('mysql2');
-
-module.exports = mysql2.createConnection({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  charset: 'utf8mb4',
-});
+```env
+DB_HOST=your_database_host
+DB_USER=your_database_user
+DB_PASSWORD=your_database_password
+DB_NAME=your_database_name
 ```
-## Technologies Used
 
-### Frontend
-- Vue.js
-- JavaScript
-- HTML5
-- CSS3
+The `.env` file contains private configuration and must not be committed to GitHub.
 
-### Backend
-- Node.js
-- Express.js
-- REST API
+### Run the Backend
 
-### Database
-- MySQL
+```bash
+cd backend
+npm install
+npm start
+```
 
-### Development Tools
-- Git
-- GitHub
-- Visual Studio Code
+The backend runs at:
+
+```text
+http://localhost:3000
+```
+
+### Run the Frontend
+
+Open a second terminal from the main project directory:
+
+```bash
+cd frontend
+npm install
+npm run serve
+```
+
+The frontend runs at:
+
+```text
+http://localhost:8080
+```
+
+## Project Structure
+
+```text
+Groupomania-Social-Network/
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── routes/
+│   └── database_structure.sql
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── assets/
+│       ├── components/
+│       ├── router/
+│       ├── store/
+│       ├── styles/
+│       └── views/
+└── screenshots/
+```
 
 ## What I Learned
 
-Through this project, I developed practical experience in building a full-stack web application and connecting a Vue.js frontend to a Node.js and Express backend. I learned how to create and manage user accounts, store and retrieve data from a MySQL database, and implement interactive features such as posts, images, likes and comments. The project also strengthened my troubleshooting skills and my understanding of application structure, API communication and version control using Git and GitHub.
+This project gave me practical experience building a complete full-stack application and connecting a Vue.js frontend to a Node.js and Express backend.
+
+I developed experience with user authentication, REST API communication, relational database operations, image uploads, application state management, responsive design, troubleshooting, and version control with Git and GitHub.
+
+I also strengthened my ability to organise a larger project, connect frontend and backend functionality, investigate technical problems, and work toward project requirements and deadlines.
+
+## Project Status
+
+The core application and its main functionality are complete. The interface was subsequently redesigned to improve visual consistency, responsiveness, and usability.
+
+## Author
+
+**Andreea Poamaneagra**
+
+[GitHub Profile](https://github.com/AndreeaVP)
